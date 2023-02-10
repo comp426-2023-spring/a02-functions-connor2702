@@ -15,6 +15,10 @@
   ],
   "author": "connor2702",
   "license": "GPL-3.0-or-later",
+  "bin": {
+    "galosh.js": "./cli.js"
+  },
+  "type": "module",
   "bugs": {
     "url": "https://github.com/comp426-2023-spring/a02-functions-connor2702/issues"
   },
