@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-const minimist = require('minimist');
-const moment = require('moment');
+import "minimist";
+import "node-fetch";
+import "moment-timezone";
 
 const argument = minimist(process.argv.slice(2));
 
@@ -17,6 +18,8 @@ if (argument.h) {
     process.exit(0);
 } 
 
+const latitude = 0;
+const longitude = 0;
 
 if (argument.n) {
     const latitude = argument.n;
@@ -27,7 +30,7 @@ if (argument.n) {
 if (argument.e) {
     const longitude = argument.e;
 } else if (argument.w) {
-    const longitude = -(argument.w)
+    const longitude = -(argument.w);
 }
 
 const timezone = moment.tz.guess();
