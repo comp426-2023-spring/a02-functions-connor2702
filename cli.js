@@ -16,7 +16,17 @@ if (argument.h) {
         -d 0-6        Day to retrieve weather: 0 is today; defaults to 1.
         -j            Echo pretty JSON from open-meteo API and exit.`);
     process.exit(0);
-} 
+}
+
+if (argument.n > 90 || argument.s > 90) {
+    console.log('Latitude must be in range');
+    process.exit(1);
+}
+
+if (argument.e > 180 || argument.w > 180) {
+    console.log('Longitude must be in range');
+    process.exit(1);
+}
 
 const latitude = 0;
 const longitude = 0;
@@ -44,8 +54,6 @@ if (argument.j) {
     console.log(data);
     process.exit(0);
 }
-
-
 
 
 const days = argument.d; 
