@@ -4,6 +4,7 @@ import "minimist";
 import "node-fetch";
 import "moment-timezone";
 
+const minimist = require('minimist');
 const argument = minimist(process.argv.slice(2));
 
 
