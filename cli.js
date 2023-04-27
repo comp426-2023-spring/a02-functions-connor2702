@@ -15,29 +15,41 @@ if (argument.h) {
         -d 0-6        Day to retrieve weather: 0 is today; defaults to 1.
         -j            Echo pretty JSON from open-meteo API and exit.`);
     process.exit(0);
+} 
+
+
+if (argument.n) {
+    const latitude = argument.n;
+} else if (argument.s) {
+    const latitude = -(argument.s);
 }
 
+if (argument.e) {
+    const longitude = argument.e;
+} else if (argument.w) {
+    const longitude = -(argument.w)
+}
 
 const timezone = moment.tz.guess();
 
 
-
-
-
-const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=35.875&longitude=-79.0&daily=precipitation_hours&temperature_unit=fahrenheit&timezone=America%2FNew_York');
+const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&daily=precipitation_hours&timezone=' + timezone);
 const data = await response.json();
 
 
+if (argument.j) {
+    console.log(data);
+    process.exit(0);
+}
 
 
 
 
-const days = argument.d 
-
+const days = argument.d; 
 if (days == 0) {
-  console.log("today.")
+  console.log("today.");
 } else if (days > 1) {
-  console.log("in " + days + " days.")
+  console.log("in " + days + " days.");
 } else {
-  console.log("tomorrow.")
+  console.log("tomorrow.");
 }
