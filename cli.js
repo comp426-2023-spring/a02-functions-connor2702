@@ -28,19 +28,19 @@ if (argument.e > 180 || argument.w > 180) {
     process.exit(1);
 }
 
-const latitude = 0;
-const longitude = 0;
+var latitude = 0;
+var longitude = 0;
 
 if (argument.n) {
-    const latitude = argument.n;
+    latitude = argument.n;
 } else if (argument.s) {
-    const latitude = -(argument.s);
+    latitude = -(argument.s);
 }
 
 if (argument.e) {
-    const longitude = argument.e;
+    longitude = argument.e;
 } else if (argument.w) {
-    const longitude = -(argument.w);
+    longitude = -(argument.w);
 }
 
 const timezone = moment.tz.guess();
