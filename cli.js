@@ -50,8 +50,16 @@ const data = await response.json();
 
 
 if (argument.j) {
-    console.log(data);
-    process.exit(0);
+    if (argument.n > 90 || argument.s > 90) {
+        console.log('Latitude must be in range');
+        process.exit(1);
+    } else if (argument.e > 180 || argument.w > 180) {
+        console.log('Longitude must be in range');
+        process.exit(1);
+    } else {
+        console.log(data);
+        process.exit(0);
+    }
 }
 
 
