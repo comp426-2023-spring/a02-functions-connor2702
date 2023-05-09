@@ -17,12 +17,12 @@ if (argument.h) {
     process.exit(0);
 }
 
-if (argument.n > 90 || argument.s > 90 || argument.n == undefined || argument.s == undefined) {
+if (argument.n > 90 || argument.s > 90) {
     console.log('Latitude must be in range');
     process.exit(1);
 }
 
-if (argument.e > 180 || argument.w > 180 || argument.e == undefined || argument.w == undefined) {
+if (argument.e > 180 || argument.w > 180) {
     console.log('Longitude must be in range');
     process.exit(1);
 }
